@@ -1,6 +1,8 @@
 const request = require('request');
 
-request('https://api.thecatapi.com/v1/breeds/search?q=sib', (error, response, body) => {
+let input = process.argv.slice(2)
+
+request('https://api.thecatapi.com/v1/breeds/search?q=' + input, (error, response, body) => {
   // Print the error if one occurred
   if (error !== null) {
   console.log('error:', error)
